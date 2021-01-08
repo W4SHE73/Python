@@ -1,0 +1,38 @@
+#curso CISCO
+print() >> imprime por pantalla = print("hello work")
+\n >> nueva linea(hace un salto de linea) >> print("hello work\n")
+end="" >> para escribir print de 2 lineas en la misma linea >> print("hello work" , end="") 
+sep="-" >> es un separador, en un string, se pondra esto entre cada separador >> print("hello","work", sep="-")
+_ entre numeros >> nos permite separar los numeros para mayor legibilidad >> 11111111 o 11_111_111
+0o >> convercion autimatica de los numeros a octal >> print(0o123)
+0x >> convercion automatica de los numeros a hexadecimal >> print(0x123)
+3e8 >> para elevar un numero a notacion cientifica, se lee, tres por diez elevado a 8 >> print(3e8)
+#revizar 2.1.2.10 literales de python
+
+*******************************************
+# repaso profe
+from numpy import array
+nombre=[]
+append # para agregar al arreglo
+len # para saber largo del arreglo >> lar=len(nombre)
+range >> retorna una sucecion de numeros enteros
+	range (a,b,c) >> a) donde inicia / b) donde termina[b-1] / c) incremento
+random.choice # selecciona elemenots al azar de una lista >> random.choice(["M","F"])
+\t # tab hacia el lado
+import os , os.system("cls") #limpia la pantalla
+os.system("pause") #para pausar por pantalla
+random.uniform() # buscar para que sirve
+
+**********************************************
+#resumen areglos
+append >> para agregar elementos >> lista.append(1) >> pf = (1)
+extend >> agrega elementos por separados >> lista.extend("zzz") >> pf = ('z', 'z', 'z')
+remove >> borra elementos >> lista.remove(especificar el valor a borrar)
+index >> dice la posicion del valor >> print(lista.index(algun elemento)) >> pf = lugar del elemento
+count >> cuantas veces se repite un elemento en las listas 
+reverse >> le da vuelta a la lista
+lista[2] = newelemento >> cambia lo que alla en el lugar 2 por lo que escribamos despues del = >> newelemento
+
+if
+ { str = 'helloword' print(str[::-1]) >> drowolleh }
+   str[start:end:step] >> guiarce para cortar palabras

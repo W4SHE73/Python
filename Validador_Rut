@@ -1,0 +1,52 @@
+# crear un validador de RUT
+# anotar todos los numeros antes del -
+# invertir el orden contando de izquierda a derecha
+# multiplicar cada digito por la serie: 2,3,4,5,6,7
+# se sumaran los resultados y se dividira por 11 y se guardara el modulo
+# el resultado de multiplica por 11 y se ve cuanto le falta para llegar a 190
+# a 11 se le resta la diferencia anterior
+# si el resultado es 11, el - sera 0, si es 10, el - sera K
+import math
+rut = int(input("ingrece su rut sin puntos ni digito verificador: "))
+cont = len(str(rut))
+int(cont)
+if(cont == 7):
+    H = 0 # esto es, para asegurar cual quier rut valido
+
+A = (rut%10)*2
+rut = math.trunc(rut/10)
+print(A)
+B = (rut%10)*3
+rut = math.trunc(rut/10)
+print(B)
+C = (rut%10)*4
+rut = math.trunc(rut/10)
+print(C)
+D = (rut%10)*5
+rut = math.trunc(rut/10)
+print(D)
+E = (rut%10)*6
+rut = math.trunc(rut/10)
+print(E)
+F = (rut%10)*7
+rut = math.trunc(rut/10)
+print(F)
+G = (rut%10)*2
+rut = math.trunc(rut/10)
+print(G)
+H = rut*3
+print(H)
+
+Z = (A+B+C+D+E+F+G+H)
+print(Z)
+Y = Z/11
+Y= math.trunc(Y)
+print(Y)
+X = Z - (Y*11)
+K = 11 - X
+if(K==11):
+    print(0)
+elif(K==10):
+    print(K)
+else:
+    print(K)

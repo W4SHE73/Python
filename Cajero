@@ -1,0 +1,74 @@
+# crear un cajero automatico considerando los siguientes puntos
+# debe tener un validador de usr con rut y use un token como pwd 
+# debera ser usar condicionales y bucles para las operaciones
+
+O = 5 # se inicializa en 0 ya que, permite ingresar al while de seleccion
+valor = True #este se usara como variable para despues, negar el while como verificador
+
+def error():
+     print("su token no es valido\n ")
+     
+def Girar(token, cash):
+        G = int(input("cuanto dinero desea girar? \n$"))
+        pwd = int(input("ingrece su token para proseguir"))
+        if(token == pwd):
+             if(G<cash):
+                print("*****",cash) #para saber con que valor entra cash
+                cash= cash - G
+                print ("cash vale", cash) #para saber con que valor termina cash
+                return cash
+             else:
+                 print("su giro subrepasa el monto de su cuenta!\n")
+        else:
+                error()
+
+def Depositar(cash):
+    D = int(input("cuanto dinero desea depositar? \n$"))
+    pwd = int(input("ingrece su token para proseguir"))
+    if(token == pwd):
+        cash = cash + D
+    else:
+         error()
+
+while(valor):
+        try:
+            rut = int(input("ingrece su rut sin puntos ni digito verificador: "))
+            if (rut >= 600000 and rut <= 30000000):
+                while(valor):
+                        try:
+                            token = int(input("cree su token de transacciones\n(este debe estar compuesto solo de numeros enteros): "))
+                            print("necesita hacer un deposito inicial para abrir su cuenta\n")
+                            while(token > 0):   
+                                pwd = int(input("ingrece su token para proseguir"))
+                                if(token == pwd):
+                                     cash = int(input("de cuanto sera su deposito inicial? solo ingresar numeros entero\n $"))
+                                     print("*****",cash)
+                                     print("que operacion desea realizar? \n")
+                                     while(O > 0):
+                                           O = int(input("1 para girar \n2 para depositar \n3 para consultar saldo \n4 para cerrar sesion\n"))
+                                           if (O == 1):
+                                               cash = Girar(token, cash) # se le asigna lo que resulte de la funcion a la variable cash
+                                                    
+                                           elif(O == 2):
+                                                cash = Depositar(cash)
+                                                    
+                                           elif(O == 3):
+                                                print(" su saldo es: $" , cash)
+ 
+                                           elif(O == 4 ): #permite cerrar todo el programa
+                                                O = 0
+                                                print("usted a finalizado sesion")
+                                                valor = False
+                                                token = -1
+
+                                           else:
+                                                print("eliga una opcion valida")
+                                else:
+                                     error()
+                
+                        except:
+                                print("token no valido")
+            else:
+                 print("rut no valido")   
+        except ValueError:
+                print("rut no valido")

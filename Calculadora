@@ -1,0 +1,42 @@
+#calculadora
+def suma(x, y):
+   print("la suma es: ", x + y)
+
+def resta(x, y):
+    print("la resta es: ", x - y)
+   
+def mult(x, y):
+   print("la mul es: ", x * y)
+
+def div(x, y):
+   print("la dev es: ", x / y)
+   
+def calculadora(z):
+    if (z==1):
+        {
+        suma(x,y)
+        }
+
+    elif (z==2):
+        {
+        resta(x,y)
+        }
+
+    elif (z==3):
+        {
+        mult(x,y)
+        }
+
+    else :
+        {
+        div(x,y)
+        }
+        
+#programa principal 
+
+x = int(input("ingrece un numero: "))
+y = int(input("ingrece un numero: "))
+z = int(input("ingrece una opcion:  1+, 2- , 3*, 4/"))
+calculadora(z)
+
+
